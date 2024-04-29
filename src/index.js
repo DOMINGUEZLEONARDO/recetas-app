@@ -1,13 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { BrowserRouter } from 'react-router-dom';
+import { RecetasProvider } from './Provider/RecetasContext';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+
+const root = ReactDOM.createRoot(document.getElementById('wrap'));
 root.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+      <RecetasProvider>
+        <App />
+      </RecetasProvider>
+    </BrowserRouter>
   </React.StrictMode>
 );
 
