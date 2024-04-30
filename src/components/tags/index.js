@@ -1,12 +1,13 @@
 import { useContext } from "react";
-import { RecetasContext } from "../Provider/RecetasContext";
 import { Link } from "react-router-dom";
+import { RecipeContext } from '../../provider/RecipeContext'
+
 
 
 
 export const Tags = () => {
 
-    const { tags } = useContext(RecetasContext);
+    const { tags } = useContext(RecipeContext);
 
     return (
         <div className='row'>
