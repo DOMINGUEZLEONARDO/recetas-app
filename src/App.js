@@ -1,12 +1,14 @@
 
+import { RecipeProvider } from './provider/RecipeContext';
+import { AppRoutes } from './routes/AppRoutes';
 import './styles/App.css'
-import { RecipeView } from './views/RecipeView';
 
 function App() {
 
   return (
-    <RecipeView />
-
+    <RecipeProvider>
+      <AppRoutes />
+    </RecipeProvider>
   );
 }
 

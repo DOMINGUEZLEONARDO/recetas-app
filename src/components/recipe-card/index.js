@@ -1,30 +1,18 @@
 import React from 'react'
+import { getFormattedDate } from '../../helpers';
 
 
 
 export const RecipeCard = ({ article }) => {
   
-  const date = new Date(article.display_date);
-  
-  const day = date.getDate();
-
-  const month = [
-    "enero", "febrero", "marzo", "abril", "mayo", "junio",
-    "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"
-  ];
-
-  const nameMonths = month[date.getMonth()];
-
-  const year = date.getFullYear();
-
-  const dateFormat = `${day} de ${nameMonths} de ${year}`;
+  const formattedDate = getFormattedDate(article.display_date)
 
   return (
 
     <article className='mod-caja-nota lugares w-100-mobile'>
-      <section id className='cont-figure'>
+      <section className='cont-figure'>
         <a className='figure'>
-          <picture id className="content-pic picture">
+          <picture className="content-pic picture">
             <img
               className='content-img'
               src={article.promo_items.basic.url}
@@ -39,11 +27,8 @@ export const RecipeCard = ({ article }) => {
             <b>{article.headlines.basic}</b>
           </a>
         </h2>
-        <h4 className='com-date'>{dateFormat}</h4>
+        <h4 className='com-date'>{formattedDate}</h4>
       </div>
     </article>
-
-
-
   )
 }
